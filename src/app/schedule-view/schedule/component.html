@@ -10,6 +10,7 @@
       <div class="day-label">{{ longDayName(dayNum) }}</div>
       <ng-container >
           <schedule-event *ngFor="let p of periodsOnDay(dayNum)"
+            (removeEvent)="removeEvent(p.crn)"
             [style.margin-top.px] = "eventPosition(p.startTime)"
             [style.backgroundColor] = "getBackgroundColor(p.color)"
             [normalHeight] = "eventHeight(p.endTime - p.startTime)"

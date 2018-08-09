@@ -14,7 +14,12 @@
 }
 
 .grid-half-hour:hover {
-  background-color: #bbb;
+ background: repeating-linear-gradient(
+  45deg,
+  #c75252,
+  #c75252 10px,
+  #c65353 10px,
+  #c65353 20px);
 }
 
 .grid-half-hour:hover > div {
@@ -23,6 +28,6 @@
 }
 
 .grid-half-hour.excluded {
-  background-color: #777;
+  background-color: #DDD;
 }
 

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { ScheduleEvent } from '../../models/schedule-event.model';
 
 @Component({
@@ -20,6 +20,7 @@ import { ScheduleEvent } from '../../models/schedule-event.model';
 export class ScheduleEventComponent {
   @Input() scheduleEvent: ScheduleEvent;
   @Input() normalHeight: number;
+  @Output() removeEvent: EventEmitter<any> = new EventEmitter();
 
   hover: boolean = false;
 
@@ -29,6 +30,11 @@ export class ScheduleEventComponent {
 
   getHeight(): string {
     return this.hover ? 'auto' : this.normalHeight + 'px';
+  }
+
+  removeEvent(): void {
+    console.log('REM');
+    this.removeEvent.emit(null);
   }
 }
 

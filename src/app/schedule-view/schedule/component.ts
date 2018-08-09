@@ -31,6 +31,10 @@ export class ScheduleComponent implements AfterViewInit {
     this.constants = constants;
   }
 
+  public removeEvent(crn: number) {
+    console.log(this.schedule, crn);
+  }
+
   public longDayName(day: number) {
     return this.constants.longDayName(day);
   }
